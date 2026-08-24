@@ -34,7 +34,7 @@ export function HeroSection() {
       <SiteNav />
       <div className="hero__heading-wrap">
         <Reveal delay={0.12} distance={42}>
-          <h1 className="hero__heading">{portfolio.identity.nameEn}</h1>
+          <h1 className="hero__heading">{portfolio.identity.nameKo}</h1>
         </Reveal>
       </div>
 

@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { AboutSection } from './AboutSection'
 import { ProfileSection } from './ProfileSection'
@@ -13,7 +13,8 @@ describe('profile sections', () => {
     )
 
     expect(screen.getByText(/중학교 시절부터 약 10년간/)).toHaveClass('sr-only')
-    expect(screen.getByText(/손다빈/)).toBeInTheDocument()
+    const profile = screen.getByRole('region', { name: 'PROFILE' })
+    expect(within(profile).getByText('손다빈', { selector: '.profile__name span' })).toBeInTheDocument()
     expect(screen.getByText(/2023\.03 입학 · 2027\.02 졸업 예정/)).toBeInTheDocument()
     expect(screen.getByText(/주전공 평점 4\.29 \/ 4\.5/)).toBeInTheDocument()
     expect(screen.getByText('한국어 · 원어민에 준하는 수준')).toBeInTheDocument()

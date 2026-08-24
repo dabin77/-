@@ -21,9 +21,11 @@ export type Project = {
   title: string
   summary: string
   role: string
+  outcome?: string
   href: string
   cta: string
-  theme: 'green' | 'red'
+  theme: 'blue' | 'green' | 'red'
+  mediaFit?: 'contain' | 'cover'
   images: Array<{
     src: string
     alt: string
@@ -128,6 +130,7 @@ export const projects: Project[] = [
     href: 'https://kingospot-rnwr.vercel.app/#intro',
     cta: '실제 사이트 보기',
     theme: 'green',
+    mediaFit: 'contain',
     images: [
       { src: '/assets/kingo/intro.png', alt: 'KINGO SPOT 실제 서비스 첫 화면' },
       { src: '/assets/kingo/purpose.png', alt: 'KINGO SPOT 방문 목적 선택 화면' },
@@ -151,6 +154,30 @@ export const projects: Project[] = [
       { src: '/assets/starfield/revenue.png', alt: '스타필드 수원 예상 수익 구조 슬라이드' },
     ],
   },
+  {
+    number: '03',
+    category: 'AI 교육 서비스 · 국제 공모전',
+    title: 'HAND IN HAND',
+    summary:
+      '고령층의 디지털 소외와 사회적 고립을 줄이기 위해 1:1 연결, 커뮤니티, AI 소통 기능을 설계한 교육·정서 지원 서비스',
+    role: '팀장 · 서비스 기획 · UX/UI 설계 · Figma 프로토타입 · 발표',
+    outcome: '제8회 글로벌 미래교육디자인 공모전 한국 예선 통과',
+    href:
+      'https://iite.unesco.org/news/bnu-and-unesco-iite-co-organized-the-8th-global-competition-on-design-for-future-education/',
+    cta: '공모전 공식 소개',
+    theme: 'blue',
+    mediaFit: 'contain',
+    images: [
+      {
+        src: '/assets/hand-in-hand/international-certificate.jpg',
+        alt: 'HAND IN HAND 국제 공모전 Pre-finals 진출 인증서',
+      },
+      {
+        src: '/assets/hand-in-hand/korea-award.jpg',
+        alt: 'HAND IN HAND 한국 예선전 우수 성적 상장',
+      },
+    ],
+  },
 ]
 
 export const experiences: Experience[] = [
@@ -161,11 +188,6 @@ export const experiences: Experience[] = [
   },
   {
     number: '02',
-    title: '고객 응대',
-    description: '대학 입학 후 약 3년 · 다섯 곳가량의 식당에서 고객 응대',
-  },
-  {
-    number: '03',
     title: '여행·통역',
     description: '중국인 고객 여행 일정·동선 안내 · 피부과 통역 및 현장 지원',
   },
@@ -178,7 +200,7 @@ export const portfolio: PortfolioData = {
     positioning: '한국과 중국, 사용자와 기술을 연결하는 AI 기반 서비스·콘텐츠 기획자',
     status: '인턴 · 신입 지원',
     about:
-      '중국에서 태어나 중학교 시절부터 약 10년간 한국에서 학업과 생활을 이어왔습니다. 두 문화에 대한 이해를 바탕으로 사용자와 시장을 연결하고, 생성형 AI를 활용해 아이디어를 실제 결과물로 발전시킵니다.',
+      '안녕하세요. 중학교 시절부터 약 10년간 한국에서 생활하며, 성균관대학교에서 컬처앤테크놀로지와 미디어커뮤니케이션을 공부하고 있는 손다빈입니다. 한국과 중국 두 문화에 대한 이해와 생성형 AI 활용 능력을 바탕으로, 아이디어를 실제 서비스와 콘텐츠로 발전시키는 데 강점이 있습니다.',
   },
   profile: {
     gpa: '4.29 / 4.5',

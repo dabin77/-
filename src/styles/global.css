@@ -369,7 +369,7 @@ img {
 
 .strength-row {
   display: grid;
-  grid-template-columns: clamp(4rem, 10vw, 10rem) 1fr auto;
+  grid-template-columns: clamp(4rem, 10vw, 10rem) 1fr;
   min-height: clamp(5rem, 8vw, 7.5rem);
   align-items: center;
   border-bottom: 1px solid var(--color-line-dark);
@@ -384,10 +384,6 @@ img {
 .strength-row strong {
   font-size: clamp(1rem, 2vw, 1.75rem);
   font-weight: 600;
-}
-
-.strength-row > span:last-child {
-  font-size: clamp(1.35rem, 2vw, 2rem);
 }
 
 .profile {
@@ -429,7 +425,7 @@ img {
 
 .profile-row {
   display: grid;
-  grid-template-columns: clamp(4rem, 8vw, 8.5rem) clamp(7rem, 17vw, 14rem) 1fr auto;
+  grid-template-columns: clamp(4rem, 8vw, 8.5rem) clamp(7rem, 17vw, 14rem) 1fr;
   min-height: clamp(8rem, 13vw, 12rem);
   align-items: center;
   gap: 1.5rem;
@@ -466,10 +462,6 @@ img {
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 2vw, 1.7rem);
   font-weight: 600;
-}
-
-.profile-row__arrow {
-  font-size: 1.6rem;
 }
 
 .profile__transition {
@@ -556,6 +548,13 @@ img {
     #33130e;
 }
 
+.project-card--blue {
+  color: #e8f7ff;
+  background:
+    radial-gradient(circle at 78% 16%, rgb(104 199 255 / 19%), transparent 36%),
+    #0d2432;
+}
+
 .project-card__header {
   padding: clamp(2rem, 4vw, 4.4rem) clamp(1.5rem, 4.2vw, 4.5rem) 0;
 }
@@ -601,7 +600,8 @@ img {
   word-break: keep-all;
 }
 
-.project-card__role {
+.project-card__role,
+.project-card__outcome {
   display: grid;
   gap: 0.65rem;
   margin: 2.2rem 0 0;
@@ -609,7 +609,13 @@ img {
   line-height: 1.55;
 }
 
-.project-card__role span {
+.project-card__outcome {
+  margin-top: 1.3rem;
+  font-weight: 650;
+}
+
+.project-card__role span,
+.project-card__outcome span {
   font-family: var(--font-display);
   font-size: 0.7rem;
   letter-spacing: 0.16em;
@@ -641,12 +647,28 @@ img {
   grid-row: 1 / -1;
 }
 
+.project-card__gallery--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.project-card__gallery--two .project-card__visual--main {
+  grid-row: 1;
+}
+
 .project-card__visual img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-card__image--contain {
+  object-fit: contain;
+  object-position: center;
+  padding: clamp(0.4rem, 0.8vw, 0.8rem);
+  background: rgb(5 10 14 / 32%);
 }
 
 .project-card__visual:hover img {
@@ -687,7 +709,7 @@ img {
 
 .experience-row {
   display: grid;
-  grid-template-columns: clamp(4.2rem, 8vw, 8.5rem) minmax(10rem, 0.7fr) minmax(14rem, 1.2fr) auto;
+  grid-template-columns: clamp(4.2rem, 8vw, 8.5rem) minmax(10rem, 0.7fr) minmax(14rem, 1.2fr);
   min-height: clamp(8.5rem, 12vw, 12rem);
   align-items: center;
   gap: 1.5rem;
@@ -712,15 +734,6 @@ img {
   font-size: clamp(0.9rem, 1.3vw, 1.1rem);
   line-height: 1.55;
   word-break: keep-all;
-}
-
-.experience-row__mark {
-  display: grid;
-  width: 2.8rem;
-  aspect-ratio: 1;
-  place-items: center;
-  border: 1px solid var(--color-line-dark);
-  border-radius: 50%;
 }
 
 /* Contact */
@@ -889,7 +902,7 @@ img {
   }
 
   .strength-row {
-    grid-template-columns: 4rem 1fr auto;
+    grid-template-columns: 4rem 1fr;
   }
 
   .profile__heading {
@@ -903,7 +916,7 @@ img {
   }
 
   .profile-row {
-    grid-template-columns: 3.5rem 1fr auto;
+    grid-template-columns: 3.5rem 1fr;
     gap: 0.75rem;
     padding: 1.7rem 0;
   }
@@ -914,13 +927,8 @@ img {
   }
 
   .profile-row__content {
-    grid-column: 2 / 4;
+    grid-column: 2;
     padding: 0;
-  }
-
-  .profile-row__arrow {
-    grid-column: 3;
-    grid-row: 1;
   }
 
   .profile__transition img {
@@ -969,6 +977,19 @@ img {
     grid-row: 1;
   }
 
+  .project-card__gallery--two {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    height: auto;
+  }
+
+  .project-card__gallery--two .project-card__visual,
+  .project-card__gallery--two .project-card__visual--main {
+    grid-column: 1;
+    grid-row: auto;
+    aspect-ratio: 0.72;
+  }
+
   .experience__heading {
     align-items: flex-start;
     flex-direction: column;
@@ -979,13 +1000,13 @@ img {
   }
 
   .experience-row {
-    grid-template-columns: 3.5rem 1fr auto;
+    grid-template-columns: 3.5rem 1fr;
     gap: 0.75rem;
     padding: 1.7rem 0;
   }
 
   .experience-row p {
-    grid-column: 2 / 4;
+    grid-column: 2;
   }
 
   .contact {

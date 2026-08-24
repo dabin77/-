@@ -96,7 +96,6 @@ export function AboutSection() {
                 <div className="strength-row" data-testid="strength-row">
                   <span className="strength-row__number">{strength.number}</span>
                   <strong>{strength.title}</strong>
-                  <span aria-hidden="true">↗</span>
                 </div>
               </Reveal>
             </li>

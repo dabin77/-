@@ -21,7 +21,6 @@ export function ExperienceSection() {
             <span className="experience-row__number">{experience.number}</span>
             <h3>{experience.title}</h3>
             <p>{experience.description}</p>
-            <span className="experience-row__mark" aria-hidden="true">↗</span>
           </Reveal>
         ))}
       </div>

@@ -29,6 +29,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <span>담당 역할</span>
             {project.role}
           </p>
+          {project.outcome ? (
+            <p className="project-card__outcome">
+              <span>성과</span>
+              {project.outcome}
+            </p>
+          ) : null}
           <CircleLink
             className="project-card__link"
             href={project.href}
@@ -37,17 +43,25 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
         </Reveal>
 
-        <Reveal className="project-card__gallery" delay={0.08}>
+        <Reveal
+          className={`project-card__gallery ${project.images.length === 2 ? 'project-card__gallery--two' : ''}`}
+          delay={0.08}
+        >
           {project.images.map((image, index) => (
             <figure
               className={index === 0 ? 'project-card__visual project-card__visual--main' : 'project-card__visual'}
               key={image.src}
             >
               <img
+                className={`project-card__image project-card__image--${project.mediaFit ?? 'cover'}`}
                 src={image.src}
                 alt={image.alt}
                 loading="lazy"
                 decoding="async"
+                style={{
+                  objectFit: project.mediaFit ?? 'cover',
+                  objectPosition: 'center',
+                }}
               />
             </figure>
           ))}

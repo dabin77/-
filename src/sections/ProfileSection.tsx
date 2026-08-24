@@ -30,9 +30,6 @@ export function ProfileSection() {
                   </p>
                 ))}
               </div>
-              <span className="profile-row__arrow" aria-hidden="true">
-                ↗
-              </span>
             </article>
           </Reveal>
         ))}
