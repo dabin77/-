@@ -7,6 +7,7 @@ describe('ProjectsSection', () => {
     render(<ProjectsSection />)
 
     expect(screen.getAllByRole('article')).toHaveLength(3)
+    expect(screen.getByText('선택한 세 개의 실제 결과물')).toBeInTheDocument()
     expect(screen.getByRole('heading', { name: 'PROJECTS' })).toHaveClass(
       'section-title--dark',
     )
