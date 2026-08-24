@@ -12,7 +12,7 @@ describe('profile sections', () => {
       </>,
     )
 
-    expect(screen.getByLabelText(/중학교 시절부터 약 10년간/)).toBeInTheDocument()
+    expect(screen.getByText(/중학교 시절부터 약 10년간/)).toHaveClass('sr-only')
     expect(screen.getByText(/손다빈/)).toBeInTheDocument()
     expect(screen.getByText(/2023\.03 입학 · 2027\.02 졸업 예정/)).toBeInTheDocument()
     expect(screen.getByText(/주전공 평점 4\.29 \/ 4\.5/)).toBeInTheDocument()

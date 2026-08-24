@@ -16,7 +16,7 @@ type IlluminatedWordProps = {
 
 function IlluminatedWord({ index, progress, reduceMotion, total, word }: IlluminatedWordProps) {
   const start = (index / total) * 0.78
-  const opacity = useTransform(progress, [start, Math.min(start + 0.19, 1)], [0.38, 1])
+  const opacity = useTransform(progress, [start, Math.min(start + 0.19, 1)], [0.62, 1])
 
   return (
     <motion.span aria-hidden="true" style={reduceMotion ? undefined : { opacity }}>
@@ -35,7 +35,8 @@ function IlluminatedStatement({ text }: { text: string }) {
   const words = text.split(' ')
 
   return (
-    <p className="about__statement" ref={ref} aria-label={text}>
+    <p className="about__statement" ref={ref}>
+      <span className="sr-only">{text}</span>
       {words.map((word, index) => (
         <IlluminatedWord
           index={index}
