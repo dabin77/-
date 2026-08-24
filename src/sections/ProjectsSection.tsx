@@ -7,7 +7,7 @@ export function ProjectsSection() {
     <section className="projects" id="projects" aria-labelledby="projects-title">
       <div className="projects__heading">
         <span>선택한 두 개의 실제 결과물</span>
-        <SectionTitle id="projects-title" tone="light" align="center">
+        <SectionTitle id="projects-title" tone="dark" align="center">
           PROJECTS
         </SectionTitle>
       </div>

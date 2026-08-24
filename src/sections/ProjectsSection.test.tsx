@@ -7,6 +7,9 @@ describe('ProjectsSection', () => {
     render(<ProjectsSection />)
 
     expect(screen.getAllByRole('article')).toHaveLength(2)
+    expect(screen.getByRole('heading', { name: 'PROJECTS' })).toHaveClass(
+      'section-title--dark',
+    )
     expect(screen.getByText('KINGO SPOT')).toBeInTheDocument()
     expect(screen.getByText(/추가 매출 12억 원/)).toBeInTheDocument()
     expect(

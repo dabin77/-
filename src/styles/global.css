@@ -15,6 +15,7 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: clip;
   background: var(--color-dark);
   color: var(--color-silver);
   font-family: var(--font-body);
@@ -228,12 +229,12 @@ img {
 .hero__bridge {
   position: absolute;
   z-index: 5;
-  top: clamp(13.5rem, 28vw, 26rem);
+  top: clamp(4.75rem, 8vw, 8rem);
   left: 50%;
   width: min(92vw, 92rem);
   max-width: none;
   filter: drop-shadow(0 32px 34px rgba(0, 0, 0, 0.46));
-  transform: translateX(-50%);
+  translate: -50% 0;
   will-change: transform;
 }
 
@@ -797,6 +798,10 @@ img {
 }
 
 @media (max-width: 640px) {
+  .section-title {
+    font-size: clamp(3.2rem, 14.5vw, 4rem);
+  }
+
   .site-nav {
     align-items: flex-start;
   }
