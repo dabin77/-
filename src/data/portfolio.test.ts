@@ -13,7 +13,14 @@ describe('portfolio data', () => {
   it('keeps verified profile and estimate wording accurate', () => {
     expect(portfolio.profile.gpa).toBe('4.29 / 4.5')
     expect(portfolio.profile.korean).toBe('원어민에 준하는 수준')
-    expect(portfolio.projects[1].summary).toContain('추가 매출 12억 원')
-    expect(portfolio.projects[1].summary).not.toContain('실현')
+    expect(portfolio.projects[1].summary).toBe(
+      '고객 동선과 참여 전환율을 바탕으로 추가 매출 12억 원, 매출총이익 4억 8,000만 원의 가능성을 제시한 팝업 클러스터 전략',
+    )
+    expect(portfolio.experiences.map(({ title }) => title)).toEqual([
+      '식당 마케팅',
+      '고객 응대',
+      '여행·통역',
+    ])
+    expect(JSON.stringify(portfolio)).not.toMatch(/180\s*cm|67\s*kg|몸무게|키\s*:/i)
   })
 })

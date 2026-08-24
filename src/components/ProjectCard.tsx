@@ -26,7 +26,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <Reveal className="project-card__copy">
           <p className="project-card__summary">{project.summary}</p>
           <p className="project-card__role">
-            <span>MY ROLE</span>
+            <span>담당 역할</span>
             {project.role}
           </p>
           <CircleLink
@@ -43,7 +43,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
               className={index === 0 ? 'project-card__visual project-card__visual--main' : 'project-card__visual'}
               key={image.src}
             >
-              <img src={image.src} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} />
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                decoding="async"
+              />
             </figure>
           ))}
         </Reveal>

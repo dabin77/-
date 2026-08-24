@@ -41,7 +41,12 @@ export function ProfileSection() {
       <div className="profile__transition" aria-hidden="true">
         <span>NEXT</span>
         <strong>PROJECTS</strong>
-        <img src="/assets/visual/bridge-ribbon.png" alt="" />
+        <img
+          src="/assets/visual/bridge-ribbon.webp"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </section>
   )

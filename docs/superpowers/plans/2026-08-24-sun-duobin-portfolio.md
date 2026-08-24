@@ -67,7 +67,7 @@ describe('portfolio data', () => {
 **Files:**
 - Create: `public/assets/kingo/intro.png`, `public/assets/kingo/purpose.png`, `public/assets/kingo/recommendation.png`
 - Create: `public/assets/starfield/cover.png`, `public/assets/starfield/strategy.png`, `public/assets/starfield/revenue.png`
-- Create: `public/assets/visual/bridge-hero.png`, `public/assets/visual/bridge-ribbon.png`, `public/assets/visual/ai-lattice.png`
+- Create: `public/assets/visual/bridge-hero.webp`, `public/assets/visual/bridge-ribbon.webp`, `public/assets/visual/ai-lattice.webp`
 
 **Interfaces:**
 - Produces: stable public URLs consumed by `projects` and visual sections

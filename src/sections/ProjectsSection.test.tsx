@@ -12,9 +12,18 @@ describe('ProjectsSection', () => {
     )
     expect(screen.getByText('KINGO SPOT')).toBeInTheDocument()
     expect(screen.getByText(/추가 매출 12억 원/)).toBeInTheDocument()
+    expect(screen.getAllByText('담당 역할')).toHaveLength(2)
     expect(
       screen.getByAltText('KINGO SPOT 실제 서비스 첫 화면'),
     ).toHaveAttribute('src', '/assets/kingo/intro.png')
+    expect(screen.getByAltText('KINGO SPOT 실제 서비스 첫 화면')).toHaveAttribute(
+      'loading',
+      'lazy',
+    )
+    expect(screen.getByAltText('KINGO SPOT 실제 서비스 첫 화면')).toHaveAttribute(
+      'decoding',
+      'async',
+    )
 
     const siteLink = screen.getByRole('link', { name: /실제 사이트 보기/ })
     expect(siteLink).toHaveAttribute(
