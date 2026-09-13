@@ -24,3 +24,7 @@ KINGO SPOT uses demonstration crowding and recommendation data. Hand in Hand rea
 Restaurant marketing includes menu planning for customer age groups, banner planning, production and printing, and promotional flyer creation. At the owner's request, those images are not included.
 
 The existing visual style is retained. Project evidence images open in a new tab for inspection.
+
+Project order: KINGO SPOT, HAND IN HAND, BALLON DE PARIS, STARFIELD SUWON, school promotional video.
+
+Ballon de Paris is a course brand strategy proposal. The school video was a first-year team final assignment that placed first, not a competition or official university commission. These two entries use text layouts until original media is provided.

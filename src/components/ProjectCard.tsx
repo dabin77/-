@@ -9,10 +9,21 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const titleId = `project-${project.number}`
+  const hasImages = project.images.length > 0
+  const story = project.story && (
+    <div className="project-card__story">
+      {project.story.map((step) => (
+        <div key={step.label}>
+          <h4>{step.label}</h4>
+          <p>{step.text}</p>
+        </div>
+      ))}
+    </div>
+  )
 
   return (
     <article
-      className={`project-card project-card--${project.theme}`}
+      className={`project-card project-card--${project.theme}${hasImages ? '' : ' project-card--text'}`}
       aria-labelledby={titleId}
     >
       <Reveal className="project-card__header">
@@ -45,7 +56,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />}
         </Reveal>
 
-        <Reveal
+        {hasImages ? <Reveal
           className={`project-card__gallery project-card__gallery--${project.images.length} ${project.mediaLayout === 'landscape' ? 'project-card__gallery--landscape' : ''}`}
           delay={0.08}
         >
@@ -70,18 +81,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
               </a>
             </figure>
           ))}
-        </Reveal>
+        </Reveal> : story}
       </div>
-      {project.story && (
-        <div className="project-card__story">
-          {project.story.map((step) => (
-            <div key={step.label}>
-              <h4>{step.label}</h4>
-              <p>{step.text}</p>
-            </div>
-          ))}
-        </div>
-      )}
+      {hasImages && story}
     </article>
   )
 }

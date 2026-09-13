@@ -564,6 +564,20 @@ img {
     #0d2432;
 }
 
+.project-card--violet {
+  color: #f0e7ff;
+  background:
+    radial-gradient(circle at 78% 18%, rgb(174 131 255 / 16%), transparent 36%),
+    #22162f;
+}
+
+.project-card--amber {
+  color: #fff0c8;
+  background:
+    radial-gradient(circle at 78% 18%, rgb(255 199 96 / 14%), transparent 36%),
+    #2b210e;
+}
+
 .project-card__header {
   padding: clamp(2rem, 4vw, 4.4rem) clamp(1.5rem, 4.2vw, 4.5rem) 0;
 }
@@ -665,6 +679,31 @@ img {
   line-height: 1.85;
   word-break: keep-all;
   opacity: 0.85;
+}
+
+.project-card--text .project-card__body {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+}
+
+.project-card--text h3 {
+  word-break: keep-all;
+  line-height: 1.05;
+}
+
+.project-card--text .project-card__story {
+  grid-template-columns: 1fr;
+  gap: 1.8rem;
+  padding: 0;
+  border-top: 0;
+}
+
+.project-card--text .project-card__story > div + div {
+  padding-top: 1.8rem;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+}
+
+.project-card--text .project-card__story p {
+  font-size: 0.95rem;
 }
 
 .project-card__gallery {

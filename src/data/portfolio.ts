@@ -12,7 +12,7 @@ export type Project = {
   story?: Array<{ label: string; text: string }>
   href?: string
   cta?: string
-  theme: 'blue' | 'green' | 'red'
+  theme: 'blue' | 'green' | 'red' | 'violet' | 'amber'
   mediaFit?: 'contain' | 'cover'
   mediaLayout?: 'landscape'
   images: Array<{ src: string; alt: string }>
@@ -86,7 +86,20 @@ export const projects: Project[] = [
     ],
   },
   {
-    number: '03', category: 'RESEARCH / EXPERIENCE PLANNING', title: 'STARFIELD SUWON',
+    number: '03', category: 'BRAND CONTENT / STRATEGY PROPOSAL', title: 'BALLON DE PARIS',
+    summary: '하이엔드 스피커의 매력을 소비자가 공유하고 싶은 장면으로.',
+    role: '중국 시장 조사 / 제품 포지셔닝 제안 / 브랜드 메시지와 콘텐츠 전략 기획',
+    outcome: '중국 소비자를 대상으로 한 제품 포지셔닝과 샤오홍슈 콘텐츠 전략 제안',
+    note: '수업에서 진행한 브랜드 전략 제안 프로젝트입니다.',
+    theme: 'violet', images: [],
+    story: [
+      { label: '어떤 고민을 했는가', text: '하이엔드 스피커를 중국 소비자에게 어떤 장면과 메시지로 소개할지 고민했습니다. 제품이 사용되는 상황과 소비자가 공유하고 싶은 경험에 주목했습니다.' },
+      { label: '나의 기여', text: '중국 시장의 소비 맥락을 조사하고, 스피커를 소셜 모임을 연출하는 오브제로 포지셔닝하는 방향을 제안했습니다. 사용 장면을 바탕으로 브랜드 메시지와 참여 방식을 기획했습니다.' },
+      { label: '무엇으로 정리했는가', text: '조사 내용을 제품 포지셔닝과 샤오홍슈 콘텐츠 전략으로 구체화했습니다. 제품의 매력을 소비자가 이해하고 공유할 수 있는 콘텐츠 방향으로 연결한 기획입니다.' },
+    ],
+  },
+  {
+    number: '04', category: 'RESEARCH / EXPERIENCE PLANNING', title: 'STARFIELD SUWON',
     summary: '방문자의 동선과 참여를 연결하는 팝업 공간 기획.',
     role: '팀 프로젝트 자료 조사 / 수익 계산 모델 / 기획 고도화',
     outcome: '고객 동선과 참여 전환을 고려한 팝업 클러스터 전략 제안',
@@ -99,6 +112,18 @@ export const projects: Project[] = [
       { label: '기획의 질문', text: '팝업 공간을 방문하는 경험이 참여와 구매로 이어지려면 무엇이 필요할지 고민했습니다. 고객의 이동과 참여 과정을 중심으로 기획 방향을 정리했습니다.' },
       { label: '나의 기여', text: '관련 자료를 조사하고 방문객과 참여율 등 가정을 바탕으로 수익을 계산했습니다. 팀원들과 함께 근거를 검토하며 기획안을 구체화했습니다.' },
       { label: '콘텐츠로의 연결', text: '사용자가 어떤 맥락에서 정보를 만나고 행동하는지 생각하는 연습이었습니다. 기획의 근거를 정리하고 전달하는 역량을 보여주는 보조 프로젝트입니다.' },
+    ],
+  },
+  {
+    number: '05', category: '1학년 공동 기말 과제 / 영상 제작', title: '학교 홍보영상',
+    summary: '서울과 수원 두 캠퍼스를 담은 1학년 공동 기말 과제.',
+    role: '팀장 / 스토리라인 기획 / 촬영 / 역할 분담과 제작 일정 조율 / 발표',
+    outcome: '1학년 공동 기말 과제 1위',
+    theme: 'amber', images: [],
+    story: [
+      { label: '과제의 방향', text: '학교를 소개하는 1학년 공동 기말 과제로 팀원들과 홍보영상을 제작했습니다. 학교의 모습을 더 폭넓게 담기 위해 서울과 수원 두 캠퍼스를 함께 촬영하기로 했습니다.' },
+      { label: '나의 기여', text: '팀장으로서 두 캠퍼스의 장면을 연결하는 스토리라인을 기획하고, 팀원들의 촬영과 편집 역할 및 제작 일정을 조율했습니다. 수원캠퍼스에 직접 방문해 촬영하고 팀원들과 영상을 완성했습니다.' },
+      { label: '과제 결과', text: '최종 발표에서 영상의 기획 의도와 제작 과정을 설명했고, 1학년 공동 기말 과제에서 1위를 했습니다. 팀원들과 하나의 콘텐츠를 완성하는 과정에서 협업과 일정 조율을 경험했습니다.' },
     ],
   },
 ]
