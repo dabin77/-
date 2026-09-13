@@ -8,7 +8,7 @@ export function ProfileSection() {
       <div className="profile__heading">
         <Reveal>
           <SectionTitle id="profile-title" tone="light">
-            PROFILE
+            TOOLKIT
           </SectionTitle>
         </Reveal>
         <Reveal className="profile__name" delay={0.08}>
@@ -25,7 +25,7 @@ export function ProfileSection() {
               <h3>{row.label}</h3>
               <div className="profile-row__content">
                 {row.lines.map((line) => (
-                  <p key={line} className={line.includes('4.29') ? 'profile-row__accent' : ''}>
+                  <p key={line}>
                     {line}
                   </p>
                 ))}

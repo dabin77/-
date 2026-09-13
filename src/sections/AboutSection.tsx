@@ -4,7 +4,7 @@ import { Reveal } from '../components/Reveal'
 import { SectionTitle } from '../components/SectionTitle'
 import { portfolio, strengths } from '../data/portfolio'
 
-const languageProof = ['중국어 원어민', '한국어 원어민에 준하는 수준', '한국 생활 약 10년']
+const designPractice = ['GRAPHIC DESIGN', 'UX/UI', 'AI PROTOTYPING']
 
 type IlluminatedWordProps = {
   index: number
@@ -80,8 +80,8 @@ export function AboutSection() {
       <Reveal className="about__content" delay={0.08}>
         <IlluminatedStatement text={portfolio.identity.about} />
         <div className="about__accent" aria-hidden="true" />
-        <ul aria-label="언어와 한국 생활 경험">
-          {languageProof.map((item) => (
+        <ul aria-label="디자인 작업 분야">
+          {designPractice.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>

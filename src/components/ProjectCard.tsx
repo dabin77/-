@@ -1,4 +1,5 @@
 import type { Project } from '../data/portfolio'
+import { ArrowUpRight } from 'lucide-react'
 import { CircleLink } from './CircleLink'
 import { Reveal } from './Reveal'
 
@@ -31,20 +32,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </p>
           {project.outcome ? (
             <p className="project-card__outcome">
-              <span>성과</span>
+              <span>결과</span>
               {project.outcome}
             </p>
           ) : null}
-          <CircleLink
+          {project.note && <p className="project-card__note">{project.note}</p>}
+          {project.href && project.cta && <CircleLink
             className="project-card__link"
             href={project.href}
             label={project.cta}
             external
-          />
+          />}
         </Reveal>
 
         <Reveal
-          className={`project-card__gallery ${project.images.length === 2 ? 'project-card__gallery--two' : ''}`}
+          className={`project-card__gallery project-card__gallery--${project.images.length} ${project.mediaLayout === 'landscape' ? 'project-card__gallery--landscape' : ''}`}
           delay={0.08}
         >
           {project.images.map((image, index) => (
@@ -52,7 +54,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
               className={index === 0 ? 'project-card__visual project-card__visual--main' : 'project-card__visual'}
               key={image.src}
             >
-              <img
+              <a className="project-card__image-link" href={image.src} target="_blank" rel="noreferrer" aria-label={`${image.alt} 크게 보기 (새 탭)`}>
+                <img
                 className={`project-card__image project-card__image--${project.mediaFit ?? 'cover'}`}
                 src={image.src}
                 alt={image.alt}
@@ -62,11 +65,23 @@ export function ProjectCard({ project }: ProjectCardProps) {
                   objectFit: project.mediaFit ?? 'cover',
                   objectPosition: 'center',
                 }}
-              />
+                />
+                <span className="project-card__image-hint" aria-hidden="true">크게 보기 <ArrowUpRight size={14} /></span>
+              </a>
             </figure>
           ))}
         </Reveal>
       </div>
+      {project.story && (
+        <div className="project-card__story">
+          {project.story.map((step) => (
+            <div key={step.label}>
+              <h4>{step.label}</h4>
+              <p>{step.text}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </article>
   )
 }

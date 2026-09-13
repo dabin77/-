@@ -10,8 +10,8 @@ export function ExperienceSection() {
           EXPERIENCE
         </SectionTitle>
         <p>
-          사람을 직접 만나고 문제를 해결해 온 경험을
-          <br />서비스와 콘텐츠 기획의 감각으로 연결합니다.
+          고객을 이해하는 일에서 시작해
+          <br />매장에 쓰이는 홍보물을 완성했습니다.
         </p>
       </div>
 

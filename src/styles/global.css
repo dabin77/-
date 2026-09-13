@@ -203,7 +203,7 @@ img {
 
 .hero {
   position: relative;
-  min-height: 100svh;
+  min-height: clamp(48rem, 100svh, 65rem);
   overflow: clip;
   background: var(--color-dark);
 }
@@ -213,6 +213,16 @@ img {
   z-index: 2;
   padding: clamp(2rem, 5vh, 4.5rem) var(--gutter) 0;
   overflow: hidden;
+}
+
+.hero__eyebrow {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 clamp(2rem, 4vw, 4rem);
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  color: var(--color-muted-light);
 }
 
 .hero__heading {
@@ -234,7 +244,7 @@ img {
 .hero__bridge {
   position: absolute;
   z-index: 5;
-  top: clamp(4.75rem, 8vw, 8rem);
+  top: clamp(8.75rem, 12vw, 12rem);
   left: 50%;
   width: min(92vw, 92rem);
   max-width: none;
@@ -272,7 +282,7 @@ img {
   margin-top: 1.8rem;
   color: var(--color-muted-light);
   font-family: var(--font-display);
-  font-size: 0.84rem;
+  font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -403,6 +413,7 @@ img {
   gap: 2rem;
   padding-bottom: 2.5rem;
   border-bottom: 1px solid var(--color-line-dark);
+  flex-wrap: wrap;
 }
 
 .profile__name {
@@ -525,9 +536,7 @@ img {
 }
 
 .project-card {
-  position: sticky;
-  top: 1.5rem;
-  min-height: min(58rem, calc(100svh - 3rem));
+  position: relative;
   overflow: hidden;
   border: 1px solid rgb(255 255 255 / 12%);
   border-radius: clamp(1.6rem, 3.2vw, 3.5rem);
@@ -572,7 +581,7 @@ img {
 .project-card h3 {
   margin: 0.6rem 0 0;
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 9vw, 9.8rem);
+  font-size: clamp(2.8rem, 7.2vw, 7.6rem);
   font-weight: 600;
   line-height: 0.86;
   letter-spacing: -0.055em;
@@ -622,8 +631,40 @@ img {
 }
 
 .project-card__link {
-  margin-top: auto;
+  margin-top: 2rem;
   border-color: currentColor;
+  color: inherit;
+}
+
+.project-card__note {
+  padding-left: 0.8rem;
+  margin-top: 1.4rem;
+  border-left: 2px solid currentColor;
+  font-size: 0.8rem;
+  line-height: 1.65;
+  opacity: 0.85;
+  word-break: keep-all;
+}
+
+.project-card__story {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: 2.2rem clamp(1.5rem, 4.2vw, 4.5rem) 3rem;
+  border-top: 1px solid rgb(255 255 255 / 18%);
+}
+
+.project-card__story h4 {
+  margin: 0 0 0.8rem;
+  font-size: 0.9rem;
+}
+
+.project-card__story p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.85;
+  word-break: keep-all;
+  opacity: 0.85;
 }
 
 .project-card__gallery {
@@ -647,13 +688,62 @@ img {
   grid-row: 1 / -1;
 }
 
-.project-card__gallery--two {
+.project-card__gallery--2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   grid-template-rows: minmax(0, 1fr);
 }
 
-.project-card__gallery--two .project-card__visual--main {
+.project-card__gallery--2 .project-card__visual--main {
   grid-row: 1;
+}
+
+.project-card__gallery--1 {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  height: clamp(26rem, 43vw, 36rem);
+}
+
+.project-card__gallery--3 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: 1.55fr 1fr;
+}
+
+.project-card__gallery--3 .project-card__visual--main {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.project-card__gallery--landscape {
+  height: auto;
+  aspect-ratio: 16 / 10;
+  align-self: start;
+}
+
+.project-card__gallery--2 {
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.project-card__image-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.project-card__image-hint {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid rgb(255 255 255 / 25%);
+  border-radius: 999px;
+  background: #101114;
+  color: #fff;
+  font-size: 0.68rem;
 }
 
 .project-card__visual img {
@@ -691,6 +781,11 @@ img {
   justify-content: space-between;
   gap: 2rem;
   padding-bottom: clamp(3rem, 6vw, 6rem);
+  flex-wrap: wrap;
+}
+
+.experience .section-title {
+  font-size: clamp(3.2rem, 10vw, 9.5rem);
 }
 
 .experience__heading p {
@@ -773,7 +868,7 @@ img {
 }
 
 .contact .section-title {
-  font-size: clamp(4.1rem, 14vw, 13rem);
+  font-size: clamp(3rem, 11.5vw, 11rem);
   white-space: nowrap;
 }
 
@@ -853,6 +948,11 @@ img {
 
   .hero__heading-wrap {
     padding-top: 3.5rem;
+  }
+
+  .hero__eyebrow {
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
   }
 
   .hero__heading {
@@ -977,17 +1077,32 @@ img {
     grid-row: 1;
   }
 
-  .project-card__gallery--two {
+  .project-card__gallery--2 {
     grid-template-columns: 1fr;
     grid-template-rows: none;
     height: auto;
   }
 
-  .project-card__gallery--two .project-card__visual,
-  .project-card__gallery--two .project-card__visual--main {
+  .project-card__gallery--2 .project-card__visual,
+  .project-card__gallery--2 .project-card__visual--main {
     grid-column: 1;
     grid-row: auto;
-    aspect-ratio: 0.72;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-card__story {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .project-card__gallery--1 {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 29rem;
+  }
+
+  .project-card__gallery--landscape {
+    height: auto;
   }
 
   .experience__heading {
@@ -1014,7 +1129,7 @@ img {
   }
 
   .contact .section-title {
-    font-size: clamp(3.25rem, 15vw, 4.75rem);
+    font-size: clamp(2.6rem, 11.5vw, 4.75rem);
   }
 
   .contact__ribbon {

@@ -33,6 +33,7 @@ export function HeroSection() {
     >
       <SiteNav />
       <div className="hero__heading-wrap">
+        <p className="hero__eyebrow">CONTENT DESIGN PORTFOLIO <span>2026</span></p>
         <Reveal delay={0.12} distance={42}>
           <h1 className="hero__heading">{portfolio.identity.nameKo}</h1>
         </Reveal>
